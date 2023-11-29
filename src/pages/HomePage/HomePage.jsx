@@ -1,7 +1,7 @@
 const HomePage = () => {
   return (
     <div>
-      <h1>Welcome to Car Rental Service</h1>
+      <h1>Welcome to Car Rental Service in Ukraine</h1>
     </div>
   )
 }
