@@ -1,0 +1,18 @@
+.notFoundContainer {
+  color: black;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.customLink {
+  color: #3470ff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.customLink:hover {
+  text-decoration: underline;
+}

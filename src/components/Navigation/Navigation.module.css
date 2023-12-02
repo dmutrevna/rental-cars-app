@@ -1,0 +1,11 @@
+.navContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  font-size: 22px;
+  font-style: bold;
+  font-weight: 700;
+}
+.active {
+  color: #3470ff;
+}

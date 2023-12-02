@@ -1,14 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { loadAdverts } from './advertsOperations';
+import { loadAdvertsOperation } from './advertsOperations';
 
 const initialState = {
-  items: [],
-  filters: {
-    page: 1,
-    search: '',
-  },
-  getMore: false,
+  data: [],
+  filters: [],
   isLoading: false,
+  status: 'idle',
   error: null,
 };
 
@@ -17,24 +14,27 @@ const advertsSlice = createSlice({
   initialState: initialState,
   reducers: {
     loadAdvertsSuccess: (state, action) => {
-      state.data = action.payload;
+      state.data = action.payload.data;
       state.error = null;
     },
     loadAdvertsFailure: (state, action) => {
       state.data = [];
       state.error = action.payload;
     },
+    setFilters: (state, action) => {
+      state.filters = action.payload;
+    },
   },
   extraReducers: builder => {
     builder
-      .addCase(loadAdverts.pending, state => {
+      .addCase(loadAdvertsOperation.pending, state => {
         state.status = 'loading';
       })
-      .addCase(loadAdverts.fulfilled, (state, action) => {
+      .addCase(loadAdvertsOperation.fulfilled, (state, action) => {
         state.status = 'successful';
         state.data = action.payload;
       })
-      .addCase(loadAdverts.rejected, (state, action) => {
+      .addCase(loadAdvertsOperation.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });
@@ -42,4 +42,4 @@ const advertsSlice = createSlice({
 });
 
 export const advertsReducer = advertsSlice.reducer;
-export const { setItems, setFilters } = advertsSlice.actions;
+export const { setFilters } = advertsSlice.actions;

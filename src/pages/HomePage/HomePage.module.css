@@ -1,0 +1,12 @@
+.container {
+  color: white;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.title {
+  color: black;
+}

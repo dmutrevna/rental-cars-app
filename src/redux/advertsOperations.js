@@ -1,11 +1,14 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
-import { fetchAdverts } from '../services/api'
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchAdverts } from '../services/api';
 
-export const loadAdverts = createAsyncThunk('adverts/loadAdverts', async () => {
-  try {
-    const response = await fetchAdverts()
-    return response
-  } catch (error) {
-    throw new Error(error.message)
+export const loadAdvertsOperation = createAsyncThunk(
+  'adverts/loadAdverts',
+  async currentPage => {
+    try {
+      const response = await fetchAdverts(currentPage);
+      return response;
+    } catch (error) {
+      throw new Error(error.message);
+    }
   }
-})
+);

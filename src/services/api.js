@@ -1,12 +1,12 @@
-import axios from 'axios'
+import axios from 'axios';
 
-export const fetchAdverts = async () => {
+export const fetchAdverts = async (currentPage = 1, limit = 12) => {
   try {
     const response = await axios.get(
-      'https://656701a564fcff8d730f8bbc.mockapi.io/adverts/advert/?page=1&limit=12'
-    )
-    return response.data
+      `https://656701a564fcff8d730f8bbc.mockapi.io/adverts/advert/?page=${currentPage}&limit=${limit}`
+    );
+    return response.data;
   } catch (error) {
-    throw new Error(error.message)
+    throw new Error(error.message);
   }
-}
+};

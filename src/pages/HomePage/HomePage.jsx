@@ -1,9 +1,12 @@
+import React from 'react';
+import css from './HomePage.module.css';
+
 const HomePage = () => {
   return (
-    <div>
-      <h1>Welcome to Car Rental Service in Ukraine</h1>
+    <div className={css.container}>
+      <h1 className={css.title}>Welcome to Car Rental Service!</h1>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

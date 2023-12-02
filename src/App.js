@@ -1,33 +1,25 @@
-import React from 'react'
-import { Route, Link, Routes } from 'react-router-dom'
-import CatalogPage from './pages/CatalogPage/CatalogPage'
-import FavoritesPage from './pages/FavoritesPage/FavoritesPage'
-import HomePage from './pages/HomePage/HomePage'
+import React, { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './components/Layout/Layout';
+
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const CatalogPage = lazy(() => import('./pages/CatalogPage/CatalogPage'));
+const FavoritesPage = lazy(() => import('./pages/FavoritesPage/FavoritesPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
 const App = () => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/catalog">Catalog</Link>
-          </li>
-          <li>
-            <Link to="/favorites">Favorites</Link>
-          </li>
-        </ul>
-      </nav>
-
+    <>
       <Routes>
-        <Route path="/catalog" element={<CatalogPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="catalog" element={<CatalogPage />} />
+          <Route path="favorites" element={<FavoritesPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
       </Routes>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default App
+export default App;

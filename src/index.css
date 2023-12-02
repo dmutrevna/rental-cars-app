@@ -18,9 +18,12 @@ html {
 
 body {
   font-family: 'Manrope', sans-serif;
-  margin: 0;
-  padding: 0;
+  overflow-y: hidden;
+  margin: 0 100px;
+  padding: 20px 10px;
   font-size: 16px;
+  font-weight: 500;
+  line-height: 1.42;
   color: var(--text-main-color);
   background-color: var(--background-color);
 }
@@ -59,9 +62,4 @@ a {
 
 button {
   cursor: pointer;
-}
-
-.body-scroll-lock {
-  height: 100vh;
-  overflow-y: hidden;
 }
