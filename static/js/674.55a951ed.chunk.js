@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkrental_cars_app=self.webpackChunkrental_cars_app||[]).push([[674],{8674:(e,a,s)=>{s.r(a),s.d(a,{default:()=>t});s(2791);const c="HomePage_container__uNu-e",l="HomePage_title__UFLA3";var r=s(3329);const t=()=>(0,r.jsx)("div",{className:c,children:(0,r.jsx)("h1",{className:l,children:"Welcome to Car Rental Service!"})})}}]);
+//# sourceMappingURL=674.55a951ed.chunk.js.map
