@@ -1,7 +1,7 @@
 .emptyContainer {
   color: white;
   height: 50vh;
-  display: flex;
+  display: inline;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
