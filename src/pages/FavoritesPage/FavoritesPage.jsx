@@ -8,13 +8,13 @@ export const FavoritesPage = () => {
   const selectedAdverts = useSelector(state => state.favorites.selectedAdverts);
 
   return (
-    <div>
+    <ul>
       {selectedAdverts.length > 0 ? (
-        <div className={css.favoritesWrap}>
+        <li className={css.favoritesWrap}>
           {selectedAdverts.map(advert => (
             <CatalogItem key={advert.id} advert={advert} />
           ))}
-        </div>
+        </li>
       ) : (
         <div className={css.emptyContainer}>
           <p className={css.favoritesEmpty}>
@@ -22,7 +22,7 @@ export const FavoritesPage = () => {
           </p>
         </div>
       )}
-    </div>
+    </ul>
   );
 };
 
