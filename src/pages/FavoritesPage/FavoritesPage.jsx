@@ -10,11 +10,11 @@ export const FavoritesPage = () => {
   return (
     <div>
       {selectedAdverts.length > 0 ? (
-        <div className={css.favoritesWrap}>
+        <ul className={css.favoritesWrap}>
           {selectedAdverts.map(advert => (
             <CatalogItem key={advert.id} advert={advert} />
           ))}
-        </div>
+        </ul>
       ) : (
         <div className={css.emptyContainer}>
           <p className={css.favoritesEmpty}>
