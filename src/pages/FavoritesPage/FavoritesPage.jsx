@@ -8,7 +8,7 @@ export const FavoritesPage = () => {
   const selectedAdverts = useSelector(state => state.favorites.selectedAdverts);
 
   return (
-    <div>
+    <>
       {selectedAdverts.length > 0 ? (
         <ul className={css.favoritesWrap}>
           {selectedAdverts.map(advert => (
@@ -22,7 +22,7 @@ export const FavoritesPage = () => {
           </p>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
