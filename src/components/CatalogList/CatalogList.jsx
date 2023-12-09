@@ -7,11 +7,11 @@ import css from './CatalogList.module.css';
 
 const CatalogList = ({ adverts }) => {
   return (
-    <div className={css.catalogWrap}>
+    <ul className={css.catalogWrap}>
       {adverts.map(advert => (
         <CatalogItem key={nanoid()} advert={advert} />
       ))}
-    </div>
+    </ul>
   );
 };
 

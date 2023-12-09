@@ -5,11 +5,11 @@ import FavoritesItem from '../FavoritesItem/FavoritesItem';
 
 export const FavoritesList = ({ adverts }) => {
   return (
-    <div>
+    <ul>
       {adverts.map(advert => (
         <FavoritesItem key={nanoid()} advert={advert} />
       ))}
-    </div>
+    </ul>
   );
 };
 

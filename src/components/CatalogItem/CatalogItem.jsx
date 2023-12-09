@@ -39,7 +39,7 @@ export const CatalogItem = ({ advert }) => {
   };
 
   return (
-    <div key={advert.id} className={css.catalogItemWrap}>
+    <li key={advert.id} className={css.catalogItemWrap}>
       <IoMdHeartEmpty
         className={`${css.favoriteIcon} ${isFavorite ? css.favorite : ''}`}
         onClick={toggleFavorite}
@@ -67,7 +67,7 @@ export const CatalogItem = ({ advert }) => {
         onRequestClose={() => setIsModalOpen(false)}
         advert={advert}
       ></ModalCar>
-    </div>
+    </li>
   );
 };
 

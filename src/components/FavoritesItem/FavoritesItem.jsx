@@ -2,7 +2,7 @@ import React from 'react';
 
 export const FavoritesItem = ({ advert }) => {
   return (
-    <div key={advert.id}>
+    <li key={advert.id}>
       <img src={advert.img} alt={`Car ${advert.make} ${advert.model}`} />
       <div>
         <p>
@@ -10,7 +10,7 @@ export const FavoritesItem = ({ advert }) => {
         </p>
         <p>{advert.rentalPrice}</p>
       </div>
-    </div>
+    </li>
   );
 };
 
